@@ -103,6 +103,10 @@
     padding: 1rem;
   }
 
+  #our-services h2 {
+    text-align: center;
+  }
+
   #our-services .content-wrapper {
     max-width: unset;
     display: flex;
@@ -110,6 +114,11 @@
     align-items: center;
     gap: 2rem;
     width: 100%;
+  }
+
+  .service-image {
+    width: 300px;
+    height: 250px;
   }
 
   #service-copy {
