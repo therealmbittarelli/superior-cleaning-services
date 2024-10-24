@@ -4,8 +4,9 @@
 
 <footer>
   <p id="footer-biz-name">Superior Cleaning Services</p>
+  <p id="footer-location">Hudson, MA</p>
   <a href="mailto:dianesuperiorclean@gmail.com" id="footer-contact">
-    Contact us
+    dianesuperiorclean@gmail.com
   </a>
 </footer>
 
@@ -16,24 +17,30 @@
     padding: 2rem 1rem;
     position: relative;
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    font-family: 'Vollkorn';
   }
 
-  #footer-credit {
-    color: #f5f8e5;
+  #footer-biz-name {
+    color: white;
+    font-size: 1.75rem;
+    margin: 1rem 0;
+  }
+
+  #footer-location {
     font-size: 1.25rem;
-    line-height: 3rem;
+    margin-top: unset;
+    color: white;
   }
 
-  #footer-easter-egg-wrapper {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    position: absolute;
-    bottom: 1rem;
-    right: 1rem;
+  #footer-contact {
+    display: block;
+    color: rgb(200, 200, 244);
+    text-decoration: none;
+    font-size: 1.2rem;
   }
+
   #footer-easter-egg-wrapper img {
     height: 130px;
     width: 130px;
