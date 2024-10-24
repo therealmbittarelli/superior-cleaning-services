@@ -30,7 +30,6 @@ const ContactForm = () => {
 
   const handleChange = (evt) => {
     evt.preventDefault();
-    console.log('formd', name)
     if (evt.target === 'name') {
       setName(evt.target.value);
     }
@@ -44,7 +43,6 @@ const ContactForm = () => {
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
-    console.log("doop")
   }
 
   return (
