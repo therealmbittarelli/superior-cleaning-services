@@ -66,6 +66,7 @@ const ServicesWidget = () => {
         <li key={service} id="service-buttons-list-item">
           <button
             type="button"
+            id={service}
             onClick={() => handleClick(service)}
             className={isSelected ? 'selected' : ''}
             aria-current={isSelected ?
@@ -83,9 +84,9 @@ const ServicesWidget = () => {
   }
 
   return (
-    <section id="services-widget">
-        <h2>Our Services</h2>
-      <div class="content-wrapper">
+    <section id="our-services">
+      <h2>Our Services</h2>
+      <div className="content-wrapper">
         {generateImage()}
 
         <div id="service-copy">
