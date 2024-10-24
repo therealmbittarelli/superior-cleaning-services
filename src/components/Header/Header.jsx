@@ -1,5 +1,5 @@
 /**
- * Mighty Code
+ * Superior Cleaning Services
  *
  * @module /src/components/Header/Header.jsx
  */
@@ -11,7 +11,25 @@
 import SkipLink from '../SkipLink/SkipLink.jsx';
 
 // CSS
-import styles from './Header.module.css';
+import './Header.css';
+
+//------------------------------------------------------------------------------
+// File-level constants
+//------------------------------------------------------------------------------
+const LINKS = [
+  {
+    copy: "Services",
+    anchor: "our-services",
+  },
+  {
+    copy: "About",
+    anchor: "about-us",
+  },
+  {
+    copy: "Reviews",
+    anchor: "social",
+  },
+];
 
 //------------------------------------------------------------------------------
 // Component
@@ -19,13 +37,11 @@ import styles from './Header.module.css';
 /**
  * @component Header
  * @description The site's header component.
- *
- * @param {array} links - Object containing data for the top-level "Overview" link, as well as an array of second-level nav items. Required.
  */
-const Header = ({ links }) => {
+const Header = () => {
 
   // If no nav link data is available, don't render this component
-  if (links.length < 1) {
+  if (LINKS.length < 1) {
     return;
   }
 
@@ -35,8 +51,8 @@ const Header = ({ links }) => {
    */
   const generateLogo = () => {
     return (
-      <a className={styles.logoLink} href="/" aria-label="Maggie Bittarelli's Personal Site">
-        <img src="/uploads/mighty-mags.webp" alt="Mighty Code" className={styles.logo}/>
+      <a className="logo-link" href="/" aria-label="Superior Cleaning Services">
+        <img src="/scs-logo.png" alt="Superior Cleaning Services" className="logo"/>
       </a>
     );
   }
@@ -50,29 +66,20 @@ const Header = ({ links }) => {
     let jsx = [];
 
     // Build a list item nav link for each menu option
-    for (let link of links) {
-
-      // Add desktop/mobile-only class, as appropriate
-      let dynamicClass;
-      if (!link.showOnMobile) {
-        dynamicClass = 'desktop-only';
-      }
-      if (!link.showOnDesktop) {
-        dynamicClass = 'mobile-only';
-      }
+    for (let link of LINKS) {
 
       // Build nav link
       jsx.push(
         <li
           key={link.copy.toLowerCase().replaceAll(' ', '-')}
-          className={[styles.navLinkItem, dynamicClass].join(' ')}>
+          className="nav-link-item">
           <a
             key={link.copy.toLowerCase().replaceAll(' ', '-')}
-            href={link.linkHref} 
-            className={styles.navLink}
+            href={`#${link.anchor}`} 
+            className="nav-link"
             aria-label={link.copy}
           >
-            <p className={styles.linkCopy}>{link.copy}</p>
+            <p className="link-copy">{link.copy}</p>
           </a>
         </li>
       );
@@ -90,12 +97,13 @@ const Header = ({ links }) => {
         {generateLogo()}
 
         {/* Nav Links */}
-        <nav className={styles.nav}>
-          <ul className={styles.navLinks}>
+        <nav className="nav">
+          <ul className="nav-links">
             {generateNavLinks()}
           </ul>
         </nav>
       </div>
+      {/* <p id="locally-owned">✨Locally owned and operated✨</p> */}
     </header>
   )
 }

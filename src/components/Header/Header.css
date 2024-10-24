@@ -6,6 +6,10 @@ header {
   justify-content: center;
   background: #101521;
   padding: 0 16px;
+  position: fixed;
+  width: 100%;
+  /* opacity: .9; */
+  font-family: 'Vollkorn';
 }
 
 header > div {
@@ -15,10 +19,11 @@ header > div {
   justify-content: space-between;
   max-width: 1200px;
   width: 100%;
+  position: relative;
 }
 
 /* Logo link */
-.logoLink {
+.logo-link {
   height: 100%;
   height: 70px;
   width: auto;
@@ -40,10 +45,11 @@ header > div {
   flex-direction: row;
   justify-content: flex-end;
   width: 100%;
+  padding-right: 2rem;
 }
 
 /* List of nav links */
-.navLinks {
+.nav-links {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
@@ -54,13 +60,26 @@ header > div {
 }
 
 /* Nav link <a> */
-.navLink {
+.nav-link {
   text-decoration: none;
 }
 
 /* Nav link copy */
-.linkCopy {
+.link-copy {
   color: #f5f8e5;
   font-size: 1.2rem;
-  font-family: 'Charsey';
+}
+
+#locally-owned {
+  color: #f5f8e5;
+  font-size: 1.2rem;
+  position: absolute;
+  margin: auto;
+  top: 32px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  z-index: -1;
+  width: fit-content;
 }
