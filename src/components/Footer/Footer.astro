@@ -1,0 +1,59 @@
+---
+
+---
+
+<footer>
+  <p id="footer-biz-name">Superior Cleaning Services</p>
+  <a href="mailto:dianesuperiorclean@gmail.com" id="footer-contact">
+    Contact us
+  </a>
+</footer>
+
+<style>
+  footer {
+    background: #101521;
+    text-align: center;
+    padding: 2rem 1rem;
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+
+  #footer-credit {
+    color: #f5f8e5;
+    font-size: 1.25rem;
+    line-height: 3rem;
+  }
+
+  #footer-easter-egg-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+  }
+  #footer-easter-egg-wrapper img {
+    height: 130px;
+    width: 130px;
+    border-radius: 1.25rem;
+  }
+
+  @media (max-width: 769px) {
+    footer {
+      position: unset;
+      flex-direction: column;
+    }
+    #footer-credit {
+      max-width: 30ch;
+      line-height: 2rem;
+      align-self: center;
+    }
+
+    #footer-easter-egg-wrapper {
+      position: unset;
+      justify-content: center;
+    }
+  }
+</style>
