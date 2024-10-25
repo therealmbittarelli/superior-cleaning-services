@@ -69,17 +69,3 @@ header > div {
   color: #f5f8e5;
   font-size: 1.2rem;
 }
-
-#locally-owned {
-  color: #f5f8e5;
-  font-size: 1.2rem;
-  position: absolute;
-  margin: auto;
-  top: 32px;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  text-align: center;
-  z-index: -1;
-  width: fit-content;
-}

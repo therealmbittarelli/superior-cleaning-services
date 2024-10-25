@@ -7,11 +7,8 @@
   justify-content: center;
   align-items: center;
   background: rgb(223, 223, 244);
-  border-top: 10px solid black;
   border-bottom: 10px solid black;
-  /* border-style: double; */
   padding: 1rem 3rem;
-  margin-top: 98px;
   scroll-margin-top: 98px;
 }
 
