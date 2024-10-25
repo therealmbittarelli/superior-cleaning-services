@@ -38,10 +38,10 @@ const ServicesWidget = () => {
   let serviceCopy = residentialServiceCopy
   const generateImage = () => {
     if (selectedService === 'commercial') {
-      return <img src="/uploads/towels.webp" alt="" className="service-image" />
+      return <img src="/uploads/commercial.webp" alt="" className="service-image" />
     }
 
-    return <img src="/uploads/white-bathroom.webp" alt="" className="service-image" />
+    return <img src="/uploads/residential.webp" alt="" className="service-image" />
   }
 
   const generateServiceDescription = () => {
