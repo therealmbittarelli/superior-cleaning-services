@@ -13,6 +13,9 @@ import { useEffect, useState } from 'react';
 // CSS
 import './ServicesWidget.css';
 
+// Data
+import data from '../../data/our-services.json';
+
 //------------------------------------------------------------------------------
 // Component
 //------------------------------------------------------------------------------
@@ -31,11 +34,6 @@ const ServicesWidget = () => {
 
   const [ selectedService, setSelectedService] = useState('residential');
 
-
-  const residentialServiceCopy = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
-  const commercialServiceCopy = "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...";
-
-  let serviceCopy = residentialServiceCopy
   const generateImage = () => {
     if (selectedService === 'commercial') {
       return <img src="/uploads/commercial.webp" alt="" className="service-image" />
@@ -44,18 +42,19 @@ const ServicesWidget = () => {
     return <img src="/uploads/residential.webp" alt="" className="service-image" />
   }
 
-  const generateServiceDescription = () => {
-    if (selectedService === 'commercial') {
-      return <p className="service-description">{commercialServiceCopy}</p>
+  const generateServiceDescription = (selectedService) => {
+    let jsx = [];
+
+    for (let i = 0; i < data[selectedService].length; i++) {
+      jsx.push(
+        <li key={`${selectedService}-${i}`} className="service-description-item">
+          {data[selectedService][i]}
+        </li>
+      )
     }
 
-    return <p className="service-description">{residentialServiceCopy}</p>
+    return jsx;
   }
-
-  const handleClick = (service) => {
-
-    setSelectedService(service);
-  };
 
   const generateServiceButtons = () => {
     let jsx = [];
@@ -67,7 +66,7 @@ const ServicesWidget = () => {
           <button
             type="button"
             id={service}
-            onClick={() => handleClick(service)}
+            onClick={() => setSelectedService(service)}
             className={isSelected ? 'selected' : ''}
             aria-current={isSelected ?
               true :
@@ -85,7 +84,7 @@ const ServicesWidget = () => {
 
   return (
     <section id="our-services">
-      <h2>Our Services</h2>
+      <h2>{data.heading}</h2>
       <div className="content-wrapper">
         {generateImage()}
 
@@ -94,7 +93,9 @@ const ServicesWidget = () => {
             {generateServiceButtons()}
           </ul>
 
-          {generateServiceDescription()}
+          <ul className="service-description-list">
+            {generateServiceDescription(selectedService)}
+          </ul>
         </div>
 
       </div>
