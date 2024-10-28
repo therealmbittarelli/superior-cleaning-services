@@ -1,13 +1,18 @@
 {
-  "heading": "Services",
+  "heading": "Our Services",
+  "subheading": "Superior Cleaning Services of Hudson, MA is proud to serve the greater Hudson area! We offer thorough and immaculate residential and light commercial cleaning services on a flexible basis to suit your needs.",
   "commercial": [
-    "Lorem ipsum",
-    "lorem ipsum",
-    "lorem ipsum",
-    "lorem ipsum"
+    "Empty trash",
+    "Desk tidying",
+    "Kitchen and eating areas",
+    "Stairwells and entryways"
   ],
   "residential": [
-    "Residential ipsum",
-    "residential ipsum"
+    "Kitchen",
+    "Trash and recycling",
+    "Linen turndown",
+    "Bathrooms",
+    "Something else",
+    "Another thing"
   ]
 }
