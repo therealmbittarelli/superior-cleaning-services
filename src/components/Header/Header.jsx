@@ -29,6 +29,10 @@ const LINKS = [
     copy: "Reviews",
     anchor: "social",
   },
+  {
+    copy: "Book Now",
+    anchor: ""
+  }
 ];
 
 //------------------------------------------------------------------------------
@@ -67,22 +71,41 @@ const Header = () => {
 
     // Build a list item nav link for each menu option
     for (let link of LINKS) {
-
-      // Build nav link
-      jsx.push(
-        <li
-          key={link.copy.toLowerCase().replaceAll(' ', '-')}
-          className="nav-link-item">
-          <a
+      if (link.copy.toLowerCase() !== 'book now') {
+        // Build nav link
+        jsx.push(
+          <li
             key={link.copy.toLowerCase().replaceAll(' ', '-')}
-            href={`#${link.anchor}`} 
-            className="nav-link"
-            aria-label={link.copy}
+            className="nav-link-item"
           >
-            <p className="link-copy">{link.copy}</p>
-          </a>
-        </li>
-      );
+            <a
+              key={link.copy.toLowerCase().replaceAll(' ', '-')}
+              href={`#${link.anchor}`} 
+              className="nav-link"
+              aria-label={link.copy}
+            >
+              <p className="link-copy">{link.copy}</p>
+            </a>
+          </li>
+        );
+      }
+      else {
+        jsx.push(
+          <li
+            key={link.copy.toLowerCase().replaceAll(' ', '-')}
+            className="nav-link-item"
+          >
+            <button
+              key={link.copy.toLowerCase().replaceAll(' ', '-')}
+              onClick={() => handleBookNow()}
+              className="nav-button"
+              aria-label={link.copy}
+            >
+              {link.copy}
+            </button>
+          </li>
+        );
+      }
     }
 
     return jsx;
@@ -103,7 +126,6 @@ const Header = () => {
           </ul>
         </nav>
       </div>
-      {/* <p id="locally-owned">✨Locally owned and operated✨</p> */}
     </header>
   )
 }
