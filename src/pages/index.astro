@@ -1,29 +1,48 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
-import HeroBanner from '../components/HeroBanner/HeroBanner.astro';
+// Components
 import ContactForm from '../components/ContactForm/ContactForm.jsx';
+import Layout from '../layouts/Layout.astro';
 import ServicesWidget from '../components/ServicesWidget/ServicesWidget.jsx';
 
+// Data
+import aboutUs from '../data/about-us.json';
+import contactUs from '../data/contact-us.json';
+import data from '../data/index.json';
+import highlightsData from '../data/highlights.json';
+
+let highlights = highlightsData.highlights
 ---
 
 <Layout title="Homepage | Superior Cleaning Services">
 	<main>
     <div id="locally-owned">
-      <p id="locally-owned-copy">✨Locally owned and operated✨</p>
+      <p id="locally-owned-copy">✨{data.locallyOwned}✨</p>
     </div>
 
     <ServicesWidget client:load />
 
+    <section id="highlights">
+      {
+        highlights.length &&
+          highlights.map((highlight) => {
+            return (
+              <div>
+                <p id="highlight-heading">{highlight.heading}</p>
+                <img src={highlight.imageSrc} alt={highlight.imageAlt} />
+                <p>{highlight.copy}</p>
+              </div>
+            );
+          })
+      }
+    </section>
+
     <section id="about-us">
-      <h2>About Us</h2>
-      <div>
-        <!-- <div> -->
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-          </p>
-          <img src="/uploads/diane-flaviano.webp" alt="Flaviano and Diane sit at a table in a restaurant with their arms around each other." />
-        <!-- </div> -->
+      <div id="content-wrapper">
+        <h2>{aboutUs.heading}</h2>
+        <div>
+          <p>{aboutUs.copy}</p>
+          <img src={aboutUs.imageSrc} alt={aboutUs.imageAlt} />
+        </div>
       </div>
     </section>
 
@@ -31,11 +50,11 @@ import ServicesWidget from '../components/ServicesWidget/ServicesWidget.jsx';
       powr app
     </section> -->
 
-    <!-- <section id="contact-us">
-      <h2>Contact us</h2>
-      <p>Leave the dirty work to us - no job is too small! We would love to hear from you.</p>
+    <section id="contact-us">
+      <h2>{contactUs.heading}</h2>
+      <p>{contactUs.subheading}</p>
       <ContactForm client:load/>
-    </section> -->
+    </section>
 	</main>
 </Layout>
 
@@ -50,7 +69,7 @@ import ServicesWidget from '../components/ServicesWidget/ServicesWidget.jsx';
   #locally-owned {
     background-color: rgb(1, 1, 164);
     width: 100%;
-    margin-top: 98px;
+    margin-top: 97px;
     height: fit-content;
   }
 
@@ -62,19 +81,62 @@ import ServicesWidget from '../components/ServicesWidget/ServicesWidget.jsx';
     margin: .6rem 0;
   }
 
+  #highlights {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    max-width: 1000px;
+    gap: 1rem;
+    margin: 3rem 1rem;
+    font-family: 'Vollkorn';
+  }
+
+  #highlights > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #highlights p {
+    text-align: center;
+  }
+
+  #highlights #highlight-heading {
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+
+  #highlights img {
+    height: auto;
+    width: 80px;
+  }
+
   #about-us {
+    padding-top: 3rem;
+    padding-bottom: 5rem;
+    background: rgb(233, 233, 245);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    scroll-margin-top: 90px;
+  }
+
+  #about-us > div {
     max-width: 1064px;
-    margin-bottom: 3rem;
-    margin-top: -2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   #about-us h2 {
     font-family: 'Kingsman';
     font-size: 5rem;
     text-align: center;
+    margin-top: unset;
   }
 
-  #about-us > div {
+  #about-us > div > div {
     display: flex;
     flex-direction: row;
     gap: 2rem;
@@ -111,19 +173,22 @@ import ServicesWidget from '../components/ServicesWidget/ServicesWidget.jsx';
     #about-us {
       max-width: unset;
       width: 100%;
-      margin-bottom: 3rem;
-      padding: 0 1rem;
+      padding: 1rem 1rem 2rem;
     }
 
-  #about-us h2 {
-    font-family: 'Kingsman';
-    font-size: 5rem;
-    text-align: center;
-    margin-bottom: 1rem;
-    margin-top: 2rem;
-  }
+    #about-us > div {
+      flex-direction: column;
+    }
 
-  #about-us > div {
+    #about-us h2 {
+      font-family: 'Kingsman';
+      font-size: 5rem;
+      text-align: center;
+      margin-bottom: 3rem;
+      margin-top: 2rem;
+    }
+
+  #about-us > div > div {
     display: flex;
     flex-direction: column-reverse;
     gap: .5rem;
