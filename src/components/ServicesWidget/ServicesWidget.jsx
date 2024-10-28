@@ -84,7 +84,6 @@ const ServicesWidget = () => {
 
   return (
     <section id="our-services">
-      {/* <h2>{data.heading}</h2> */}
       <p id="services-subheading">{data.subheading}</p>
       <div className="content-wrapper">
         <ul id="service-buttons-list">
