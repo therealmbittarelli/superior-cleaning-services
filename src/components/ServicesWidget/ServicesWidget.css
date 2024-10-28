@@ -45,6 +45,7 @@
    font-size: 1.5rem;
    font-family: 'Mulish';
    background: rgb(247, 235, 239, .8);
+   display: none;
 }
 
 .service-image {
