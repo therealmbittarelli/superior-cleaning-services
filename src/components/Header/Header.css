@@ -4,12 +4,14 @@ header {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  background: #101521;
+  /* background: #101521; */
+  background: white;
+  border-bottom: 2px solid rgb(76, 123, 240);
   padding: 0 16px;
   position: fixed;
   width: 100%;
   /* opacity: .9; */
-  font-family: 'Vollkorn';
+  font-family: 'Mulish';
 }
 
 header > div {
@@ -25,7 +27,7 @@ header > div {
 /* Logo link */
 .logo-link {
   height: 100%;
-  height: 70px;
+  height: 85px;
   width: auto;
   border-radius: .5rem;
 
@@ -33,7 +35,7 @@ header > div {
 
 /* Logo image */
 .logo {
-  height: 70px;
+  height: 100%;
   width: auto;
   border-radius: .5rem;
   margin-right: .5rem;
@@ -62,10 +64,56 @@ header > div {
 /* Nav link <a> */
 .nav-link {
   text-decoration: none;
+  position: relative;
+  color: rgb(19,18,42);
+  display: inline-block;
 }
+.nav-link:visited, .nav-link:active {
+  color: rgb(19,18,42);
+}
+li:not(:last-of-type) .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 1rem;
+  width: 0;
+  height: 2px;
+  background-color: currentColor;
+  transition: width .2s ease-in-out;
+  color: rgb(246, 1, 91);
+}
+
+li:not(:last-of-type) .nav-link:hover::after {
+  width: 100%;
+}
+
 
 /* Nav link copy */
 .link-copy {
-  color: #f5f8e5;
+  /* color: #f5f8e5; */
+  color: navy;
   font-size: 1.2rem;
+  text-decoration: none;
+  /* transition: text-decoration .25s ease-in-out; */
+}
+
+
+.nav-links li:last-of-type p {
+  font-family: 'MulishBold';
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  background: rgb(248, 61, 129);
+  border:2px solid rgb(246, 1, 91);
+  /* background:  */
+  color: white;
+  /* color: black; */
+  border-radius: .5rem;
+  border: none;
+  box-shadow: none;
+  padding: .6rem .75rem;
+  transition: transform .15s ease-in-out;
+}
+.nav-links li:last-of-type a:hover p {
+  transform: translate(.05rem, -.25rem);
 }

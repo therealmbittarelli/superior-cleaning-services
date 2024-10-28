@@ -54,7 +54,7 @@ const Header = () => {
 
     // Build a list item nav link for each menu option
     for (let link of navLinks) {
-      if (link.copy.toLowerCase() !== 'book now') {
+      // if (link.copy.toLowerCase() !== 'request quote') {
         // Build nav link
         jsx.push(
           <li
@@ -71,24 +71,24 @@ const Header = () => {
             </a>
           </li>
         );
-      }
-      else {
-        jsx.push(
-          <li
-            key={link.copy.toLowerCase().replaceAll(' ', '-')}
-            className="nav-link-item"
-          >
-            <button
-              key={link.copy.toLowerCase().replaceAll(' ', '-')}
-              onClick={() => handleBookNow()}
-              className="nav-button"
-              aria-label={link.copy}
-            >
-              {link.copy}
-            </button>
-          </li>
-        );
-      }
+      // }
+      // else {
+        // jsx.push(
+        //   <li
+        //     key={link.copy.toLowerCase().replaceAll(' ', '-')}
+        //     className="nav-link-item"
+        //   >
+        //     <button
+        //       key={link.copy.toLowerCase().replaceAll(' ', '-')}
+        //       onClick={() => handleBookNow()}
+        //       className="nav-button"
+        //       aria-label={link.copy}
+        //     >
+        //       {link.copy}
+        //     </button>
+        //   </li>
+        // );
+      // }
     }
 
     return jsx;
