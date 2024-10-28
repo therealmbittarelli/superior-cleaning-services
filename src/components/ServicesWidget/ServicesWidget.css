@@ -1,54 +1,73 @@
 /* Styles for ServicesWidget */
 
 #our-services {
-  max-width: 100%;
+  /* max-width: 100%; */
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  background: rgb(233, 233, 245);
+  align-items: flex-end;
+  /* background: rgb(233, 233, 245); */
+  padding-bottom: 2rem;
+  padding-top: 2rem;
   scroll-margin-top: 98px;
+  background-image: url('/uploads/hero-background.webp');
+  background-position: center;
+  background-size: cover;
 }
 
 #our-services .content-wrapper {
-  padding: 2rem 3rem 5rem;
+  padding: 1rem 1rem 3rem;
+  margin-right: 2rem;
+  border-radius: .5rem;
   max-width: 1400px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   gap: 2rem;
+  min-width: 900px;
+  /* background: rgb(201, 201, 243); */
+  background: rgba(200, 219, 238, 0.9);
+  /* opacity: .7; */
+
 }
 
 #our-services h2 {
   margin: 0 auto;
-  font-family: 'Kingsman';
-  font-size: 5rem;
+  font-family: 'Montserrat';
+  font-size: 4.5rem;
   margin-bottom: 2rem;
   margin-top: 1rem;
+}
+
+#our-services #services-subheading {
+   max-width: 700px;
+   text-align: center;
+   font-size: 1.5rem;
+   font-family: 'Mulish';
+   background: rgb(247, 235, 239, .8);
 }
 
 .service-image {
   width: 400px;
   height: 400px;
-  /* width: 40%; */
   object-fit: cover;
   object-position: center;
   border-radius: 50%;
+  border: 2px solid rgb(2, 2, 127);
 }
 
 #service-copy {
   display: flex;
-  max-width: 800px;
-  width: 60%;
-  flex-direction: column;
-  background: rgb(201, 201, 243);
+  flex-direction: row;
   border-radius: .5rem;
-  align-items: center;
+  padding: 0 1rem;
+  justify-content: space-between;
+  gap: 4rem;
 }
 #service-buttons-list {
   display: flex;
   flex-direction: row;
-  gap: 1rem;
+  gap: 2rem;
   padding: 1rem 2rem 0;
   justify-content: center;
 }
@@ -60,35 +79,39 @@
 #our-services button {
   z-index: 10;
   text-transform: capitalize;
-  font-family: 'Vollkorn';
+  font-family: 'Mulish';
   border: none;
   background-color: transparent;
   font-size: 2rem;
 }
 
 #our-services button.selected {
-  color: red;
+  color: rgb(246, 7, 95);
+  text-decoration: underline;
 }
 
 .service-description-list {
   max-width: 600px;
   padding: 0 1rem;
-  font-family: 'Vollkorn';
+  font-family: 'Mulish';
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 50% 50%;
   column-gap: 2.5rem;
+  row-gap: 1.5rem;
+  height: fit-content;
+  margin: 3rem 0;
 }
 
 .service-description-item {
-  font-family: 'Vollkorn';
+  font-family: 'Mulish';
   font-size: 1.5rem;
-  max-width: 11ch;
+  max-width: 15ch;
 }
 
 @media (max-width: 1100px) {
 
   #our-services {
-    padding: 1rem;
+    padding: 1rem 0;
 
   }
   #our-services .content-wrapper {
