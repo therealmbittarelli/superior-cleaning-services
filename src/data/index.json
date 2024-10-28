@@ -1,3 +1,23 @@
 {
-  "locallyOwned": "Locally owned and operated"
+  "locallyOwned": "Locally owned and operated",
+  "header": {
+    "navLinks": [
+      {
+        "copy": "Services",
+        "anchor": "our-services"
+      },
+      {
+        "copy": "About",
+        "anchor": "about-us"
+      },
+      {
+        "copy": "Reviews",
+        "anchor": "social"
+      },
+      {
+        "copy": "Book Now",
+        "anchor": ""
+      }
+    ]
+  }
 }

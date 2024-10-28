@@ -13,27 +13,8 @@ import SkipLink from '../SkipLink/SkipLink.jsx';
 // CSS
 import './Header.css';
 
-//------------------------------------------------------------------------------
-// File-level constants
-//------------------------------------------------------------------------------
-const LINKS = [
-  {
-    copy: "Services",
-    anchor: "our-services",
-  },
-  {
-    copy: "About",
-    anchor: "about-us",
-  },
-  {
-    copy: "Reviews",
-    anchor: "social",
-  },
-  {
-    copy: "Book Now",
-    anchor: ""
-  }
-];
+// Data
+import data from '../../data/index.json';
 
 //------------------------------------------------------------------------------
 // Component
@@ -44,8 +25,10 @@ const LINKS = [
  */
 const Header = () => {
 
+  let navLinks = data.header.navLinks;
+
   // If no nav link data is available, don't render this component
-  if (LINKS.length < 1) {
+  if (navLinks.length < 1) {
     return;
   }
 
@@ -70,7 +53,7 @@ const Header = () => {
     let jsx = [];
 
     // Build a list item nav link for each menu option
-    for (let link of LINKS) {
+    for (let link of navLinks) {
       if (link.copy.toLowerCase() !== 'book now') {
         // Build nav link
         jsx.push(
