@@ -1,0 +1,22 @@
+{
+  "highlights": [
+    {
+      "heading": "Fresh & Clean",
+      "imageSrc": "/uploads/icon-vacuum.svg",
+      "imageAlt": "",
+      "copy": "Lorem ipsum lorem ipsum Lorem ipsum lorem ipsum Lorem ipsum lorem ipsum Lorem ipsum lorem ipsum Lorem ipsum lorem ipsum"
+    },
+    {
+      "heading": "Family Owned",
+      "imageSrc": "/uploads/icon-clean-house.png",
+      "imageAlt": "",
+      "copy": "Lorem ipsum lorem ipsum Lorem ipsum lorem ipsum Lorem ipsum lorem ipsum Lorem ipsum lorem ipsum Lorem ipsum lorem ipsum"
+    },
+    {
+      "heading": "Trustworthy",
+      "imageSrc": "/uploads/icon-broom.png",
+      "imageAlt": "",
+      "copy": "Lorem ipsum lorem ipsum Lorem ipsum lorem ipsum Lorem ipsum lorem ipsum Lorem ipsum lorem ipsum Lorem ipsum lorem ipsum"
+    }
+  ]
+}
